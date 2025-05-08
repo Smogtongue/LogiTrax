@@ -7,16 +7,18 @@ Each section details not only the original planned steps but also the modificati
 ---
 
 ## Table of Contents
-1. [Activity 1: Structuring Business Logic and Database Integration](#activity-1-structuring-business-logic-and-database-integration)
-2. [Activity 2: Building RESTful API Endpoints](#activity-2-building-restful-api-endpoints)
-3. [Activity 3: JWT Authentication & Securing the API](#activity-3-jwt-authentication--securing-the-api)
-4. [Activity 4: Optimizing Performance with Caching and Copilot](#activity-4-optimizing-performance-with-caching-and-copilot)
-5. [Activity 5: Strengthening Security with ASP.NET Identity and JWT](#activity-5-strengthening-security-with-aspnet-identity-and-jwt)
+1. [Activity 1: Structuring Business Logic and Database Integration]
+2. [Activity 2: Building RESTful API Endpoints]
+3. [Activity 3: JWT Authentication & Securing the API]
+4. [Activity 4: Optimizing Performance with Caching and Copilot]
+5. [Activity 5: Strengthening Security with ASP.NET Identity and JWT]
 
 ---
 
+## Activity 1: Structuring Business Logic and Database Integration
+
 <details>
-<summary><strong>Activity 1: Structuring Business Logic and Database Integration</strong></summary>
+<summary>Click to expand</summary>
 
 ### 1. Project Setup
 - Open Visual Studio Code.
@@ -45,7 +47,7 @@ Each section details not only the original planned steps but also the modificati
   ```
 - Create the `LogiTraxContext.cs` file to establish a connection to a SQLite database and configure the model relationships.
 
-#### Modifications and Enhancements Made
+### Modifications and Enhancements Made
 - Identified design issues with the original `Order` model that directly held a list of `InventoryItem` objects, leading to duplicate key conflicts and foreign key constraint issues.
 - **Improvement:** Introduced a new entity, `OrderItem.cs`, to hold references to `InventoryItem` by ID along with the ordered quantity. Updated `Order.cs` to include a list of `OrderItem` objects.
 - Updated `LogiTraxContext.cs` to define proper relationships and cascade delete rules between `InventoryItem`, `Order`, and `OrderItem`.
@@ -61,8 +63,10 @@ Each section details not only the original planned steps but also the modificati
 
 ---
 
+## Activity 2: Building RESTful API Endpoints
+
 <details>
-<summary><strong>Activity 2: Building RESTful API Endpoints</strong></summary>
+<summary>Click to expand</summary>
 
 ### 1. Creating the Controllers
 - In the **Controllers** folder, create two controller files:  
@@ -86,7 +90,7 @@ Each section details not only the original planned steps but also the modificati
 ### 4. Endpoint Testing
 - Test these endpoints using Swagger or Postman to verify that the inventory and orders are created and persisted as expected.
 
-#### Modifications and Enhancements Made
+### Modifications and Enhancements Made
 - Enhanced order operations to verify stock availability, subtract ordered quantities, and create orders with associated `OrderItem` records.
 - Implemented inventory cleanup endpoint in `InventoryController.cs` to consolidate duplicate or orphaned inventory records.
 - Applied Copilot suggestions to improve error handling, asynchronous operations, and route design.
@@ -101,8 +105,10 @@ Each section details not only the original planned steps but also the modificati
 
 ---
 
+## Activity 3: JWT Authentication & Securing the API
+
 <details>
-<summary><strong>Activity 3: JWT Authentication & Securing the API</strong></summary>
+<summary>Click to expand</summary>
 
 ### 1. Configuring ASP.NET Identity and JWT
 - Register ASP.NET Identity services using a custom user model (e.g., `ApplicationUser`).
@@ -130,8 +136,10 @@ Each section details not only the original planned steps but also the modificati
 
 ---
 
+## Activity 4: Optimizing Performance with Caching and Copilot
+
 <details>
-<summary><strong>Activity 4: Optimizing Performance with Caching and Copilot</strong></summary>
+<summary>Click to expand</summary>
 
 ### 1. Enable In-Memory Caching
 - Register caching in `Program.cs` using `builder.Services.AddMemoryCache()`.
@@ -154,8 +162,10 @@ Each section details not only the original planned steps but also the modificati
 
 ---
 
+## Activity 5: Strengthening Security with ASP.NET Identity and JWT
+
 <details>
-<summary><strong>Activity 5: Strengthening Security with ASP.NET Identity and JWT</strong></summary>
+<summary>Click to expand</summary>
 
 ### 1. ASP.NET Identity Configuration
 - Integrated ASP.NET Identity by extending the DbContext from `IdentityDbContext<ApplicationUser>`.
